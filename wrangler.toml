@@ -10,18 +10,9 @@ routes = [
 [site]
   bucket = "./public"
 
-[[build.upload.rules]]
-type = "ESModule"
-globs = ["**/*.js"]
-
 [vars]
 CALLS_APP_ID = "5eb135c01d5008c89bbff70043102465"
 TURN_SERVICE_ID = "c31ec010c26b4ff56bd32d8742f18458"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "koffie-date-db"
-database_id = "your-d1-database-id"
 
 [[durable_objects.bindings]]
 name = "rooms"

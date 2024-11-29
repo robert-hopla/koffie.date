@@ -6,8 +6,6 @@ dist
 build
 public/build
 .DS_Store
-/.cache
-/.mf
-.sentryclirc
+.cache
 playwright-report
 test-results
