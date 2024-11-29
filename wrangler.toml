@@ -14,6 +14,11 @@ routes = [
 CALLS_APP_ID = "5eb135c01d5008c89bbff70043102465"
 TURN_SERVICE_ID = "c31ec010c26b4ff56bd32d8742f18458"
 
+# SSL/TLS Configuration
+[ssl]
+clean_urls = true
+always_use_https = true
+
 [[durable_objects.bindings]]
 name = "rooms"
 class_name = "ChatRoom"
