@@ -1,24 +1,32 @@
-name = "orange-meets"
-# https://developers.cloudflare.com/workers/platform/compatibility-dates
-compatibility_date = "2024-10-07"
+name = "koffie-date"
 main = "./build/index.js"
+compatibility_date = "2024-10-07"
 compatibility_flags = ["nodejs_compat"]
+
+routes = [
+  { pattern = "koffie.date", custom_domain = true }
+]
 
 [site]
   bucket = "./public"
 
+[[build.upload.rules]]
+type = "ESModule"
+globs = ["**/*.js"]
+
 [vars]
-CALLS_APP_ID = "YOUR_CALLS_SFU_APP_ID_HERE"
+CALLS_APP_ID = "5eb135c01d5008c89bbff70043102465"
+TURN_SERVICE_ID = "c31ec010c26b4ff56bd32d8742f18458"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "koffie-date-db"
+database_id = "your-d1-database-id"
 
 [[durable_objects.bindings]]
 name = "rooms"
 class_name = "ChatRoom"
 
-# Indicate that you want the ChatRoom class to be callable as Durable Objects.
 [[migrations]]
-tag = "v1" # Should be unique for each entry
-new_classes = ["ChatRoom"]
-
-# The necessary secrets are:
-# - CALLS_APP_SECRET
-# To add secret, run `echo <VALUE> | wrangler secret put <NAME>`
+tag = "v1"
+new_classes = ["ChatRoom", "RateLimiter"]

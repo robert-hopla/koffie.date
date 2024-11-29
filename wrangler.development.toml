@@ -1,4 +1,4 @@
-name = "orange-meets-development"
+name = "koffie-date-development"
 
 account_id = "8477399eb04accc1792af96aeaa25222"
 main = "./build/index.js"
@@ -57,4 +57,3 @@ enabled = true
 # The necessary secrets are:
 # - CALLS_APP_SECRET
 # Run `echo <VALUE> | wrangler secret put <NAME>` for each of these
-
